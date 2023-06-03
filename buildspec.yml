@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-version:
+      java: corretto11
+  pre_build:
+    commands:
+      - echo This is a Spring Boot pre build phase
+  build:
+    commands:
+      - echo This a Spring Boot build
+      - mvn clean package
+  post_build:
+    commands:
+      - echo This a Spring Boot post build phase
+
+artifacts:
+  files:
+    - target/StockPriceService-0.0.1-SNAPSHOT.jar
